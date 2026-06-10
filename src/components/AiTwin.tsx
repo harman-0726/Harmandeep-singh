@@ -28,7 +28,7 @@ export default function AiTwin({ isEmbedded = false }: { isEmbedded?: boolean })
   ];
 
   useEffect(() => {
-    if (bottomRef.current) {
+    if (messages.length > 1 && bottomRef.current) {
       bottomRef.current.scrollIntoView({ behavior: "smooth" });
     }
   }, [messages, loading]);

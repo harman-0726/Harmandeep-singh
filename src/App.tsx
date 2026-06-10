@@ -17,7 +17,7 @@ import { Sparkles, Bot, MessageSquare } from "lucide-react";
 
 export default function App() {
   
-  // Clean initialization check for preferred browser dark theme settings
+  // Clean initialization check for preferred browser dark theme settings and scroll resetting
   useEffect(() => {
     const savedTheme = localStorage.getItem("theme");
     if (
@@ -27,6 +27,14 @@ export default function App() {
       document.documentElement.classList.add("dark");
     } else {
       document.documentElement.classList.remove("dark");
+    }
+
+    // Force scroll to top on mount to ensure user begins at the intro section
+    if (typeof window !== "undefined") {
+      if ("scrollRestoration" in window.history) {
+        window.history.scrollRestoration = "manual";
+      }
+      window.scrollTo({ top: 0 });
     }
   }, []);
 

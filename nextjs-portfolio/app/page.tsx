@@ -13,7 +13,7 @@ import Footer from "../components/Footer";
 import { Bot } from "lucide-react";
 
 export default function Home() {
-  // Clean initialization check for preferred browser dark theme settings
+  // Clean initialization check for preferred browser dark theme settings and scroll resetting
   useEffect(() => {
     const savedTheme = localStorage.getItem("theme");
     if (
@@ -23,6 +23,14 @@ export default function Home() {
       document.documentElement.classList.add("dark");
     } else {
       document.documentElement.classList.remove("dark");
+    }
+
+    // Force scroll to top on mount to ensure user begins at the intro section
+    if (typeof window !== "undefined") {
+      if ("scrollRestoration" in window.history) {
+        window.history.scrollRestoration = "manual";
+      }
+      window.scrollTo({ top: 0 });
     }
   }, []);
 
