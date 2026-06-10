@@ -1,0 +1,6 @@
+{
+  "name": "Harmandeep Singh Portfolio",
+  "description": "Premium developer portfolio with modern Apple-Framer minimalist design and a fully interactive server-side Gemini AI assistant representation of Harmandeep.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
